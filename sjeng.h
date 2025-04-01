@@ -39,7 +39,7 @@
 #define NDEBUG 
 #include <assert.h>
 
-#define DIE (*(int *)(NULL) = 0)
+#define DIE __builtin_trap()
 
 /* GCP : my code uses WHITE=0 and BLACK=1 so reverse this */
 
@@ -152,5 +152,8 @@ typedef time_t rtime_t;
 
 #define max(x, y) ((x) > (y) ? (x) : (y))
 #define mix(x, y) ((x) < (y) ? (x) : (y))
+
+/* Tablebases */
+int init_segtb(void);
 
 #endif

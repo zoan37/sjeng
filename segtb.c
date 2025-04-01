@@ -118,6 +118,10 @@ int temp_key;
 
 int SEGTB;
 
+/* Function declarations */
+int load_2piece(void);
+int load_3piece(int w1_man, int b1_man, int b2_man, signed char *t);
+
 int valid_2piece(int w, int b, int w_man, int b_man)
 {
   /* white piece on the wrong half-board? */
@@ -705,7 +709,7 @@ void free_egtb()
 }
 
 
-int init_segtb()
+int init_segtb(void)
 {
   int i;
   
